@@ -1,10 +1,12 @@
 language: csharp
 dotnet: 3.1.101
-script:
-	dotnet test Problems.Test
+
 matrix:
 	include:
-	   - dist: xenial
-	   - dist: trusty
-	   - dotnet: 2.0.0
-	     os:ose
+	- os: osx
+	- os: linux
+	  dist: xenial
+	- os: linux
+	  dist: xenial
+
+script: dotnet test Problems.Tests
